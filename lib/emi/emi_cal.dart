@@ -22,14 +22,19 @@ class _emiState extends State<emi> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-                height: 20,
-                width: 200,
-                alignment: Alignment.topLeft,
-                color: Colors.cyan,
-                child: Text("Amount"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 20,
+                  width: 200,
+                  alignment: Alignment.topLeft,
+                  color: Colors.cyan,
+                  child: Text("Amount"),
+                ),
+                Text("\$ ${amount.toInt()}",style: TextStyle(fontSize: 20)),
+              ],
             ),
-            Text("\$ ${amount.toInt()}",style: TextStyle(fontSize: 20)),
             Slider(
               value: amount,
               divisions: 20,
@@ -41,14 +46,17 @@ class _emiState extends State<emi> {
                 });
               },
             ),
-            Container(
-              height: 20,
-              width: 200,
-              alignment: Alignment.topLeft,
-              color: Colors.red,
-              child: Text("Rate"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Container(
+                height: 20,
+                width: 200,
+                alignment: Alignment.topLeft,
+                color: Colors.red,
+                child: Text("Rate"),
+              ),
+                Text("\$ ${rate.toInt()}",style: TextStyle(fontSize: 20)),],
             ),
-            Text("\$ ${rate.toInt()}",style: TextStyle(fontSize: 20)),
             Slider(
               value: rate,
               divisions: 30,
@@ -60,14 +68,19 @@ class _emiState extends State<emi> {
                 });
               },
             ),
-            Container(
-              height: 20,
-              width: 200,
-              alignment: Alignment.topLeft,
-              color: Colors.cyan,
-              child: Text("year"),
-            ),
-            Text("\$ ${year.toInt()}",style: TextStyle(fontSize: 20)),
+           Row(
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             children: [
+               Container(
+                 height: 20,
+                 width: 200,
+                 alignment: Alignment.topLeft,
+                 color: Colors.cyan,
+                 child: Text("year"),
+               ),
+               Text("\$ ${year.toInt()}",style: TextStyle(fontSize: 20)),
+             ],
+           ),
             Slider(
               value: year,
               divisions: 30,
